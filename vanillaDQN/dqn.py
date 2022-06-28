@@ -31,7 +31,7 @@ class DQNAgent:
         qvals = self.model.forward(state)
         action = np.argmax(qvals.cpu().detach().numpy())
         
-        if(np.random.randn() < eps):
+        if(np.random.rand() < eps):
             return self.env.action_space.sample()
 
         return action
